@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SlotMachine</string>
+    <string name="loading">LOADING</string>
+    <string name="play">PLAY</string>
+    <string name="exit">EXIT</string>
+    <string name="bet">BET</string>
+    <string name="credit">CREDIT</string>
+    <string name="win">WIN</string>
+    <string name="bet_one">BET ONE</string>
+    <string name="bet_max">BET MAX</string>
+    <string name="spin">SPIN</string>
 </resources>

@@ -58,7 +58,7 @@ class SlotMachineViewModel @Inject constructor(
                 betSize = state.value.betSize
             )
 
-            for (i in 0..4) {
+            for (i in 0..5) {
                 _state.update {
                     it.copy(
                         firstSlot = SlotValues.getRandomSlot(),

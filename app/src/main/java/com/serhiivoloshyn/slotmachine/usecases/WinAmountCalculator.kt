@@ -3,7 +3,9 @@ package com.serhiivoloshyn.slotmachine.usecases
 import com.serhiivoloshyn.slotmachine.enums.BetSize
 import com.serhiivoloshyn.slotmachine.enums.SlotValues
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class WinAmountCalculator @Inject constructor() {
     fun calculateWinAmount(winningSlotValue: SlotValues?, betSize: BetSize): Int {
         var winAmount = 0

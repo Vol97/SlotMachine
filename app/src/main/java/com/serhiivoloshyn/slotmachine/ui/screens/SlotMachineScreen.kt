@@ -148,8 +148,8 @@ fun ButtonsRow(
             } else {
                 R.drawable.btn_one_default
             },
-            state
-        ) { btnBetOneClick.invoke() }
+            state.isSpinning
+        ) { if (state.creditAmount >= state.betSize.size) btnBetOneClick.invoke() }
 
         ButtonFromImage(
             if (state.isSpinning) {
@@ -157,8 +157,8 @@ fun ButtonsRow(
             } else {
                 R.drawable.btn_max_default
             },
-            state
-        ) { btnBetMaxClick.invoke() }
+            state.isSpinning
+        ) { if (state.creditAmount >= state.betSize.size) btnBetMaxClick.invoke() }
 
         ButtonFromImage(
             if (state.isSpinning || state.creditAmount < state.betSize.size) {
@@ -166,24 +166,22 @@ fun ButtonsRow(
             } else {
                 R.drawable.btn_spin_default
             },
-            state
-        ) { btnSpinClick.invoke() }
+            state.isSpinning
+        ) { if (state.creditAmount >= state.betSize.size) btnSpinClick.invoke() }
     }
 }
 
 @Composable
 fun ButtonFromImage(
     imageId: Int,
-    state: SlotMachineState,
+    isSpinning: Boolean,
     onClick: () -> Unit
 ) {
     Image(
         painter = painterResource(id = imageId),
         contentDescription = "Slot Button",
         modifier = Modifier.clickable {
-            if (!state.isSpinning
-                && state.creditAmount >= state.betSize.size
-            ) onClick.invoke()
+            if (!isSpinning) onClick.invoke()
         }
     )
 }

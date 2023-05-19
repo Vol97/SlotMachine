@@ -15,5 +15,9 @@ enum class SlotValues(val resId: Int) {
         fun getRandomSlot(): SlotValues {
             return values().random()
         }
+
+        fun getAllSlots(): Array<SlotValues> {
+            return values()
+        }
     }
 }

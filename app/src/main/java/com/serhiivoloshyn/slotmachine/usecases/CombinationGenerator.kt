@@ -65,9 +65,5 @@ class CombinationGenerator @Inject constructor() {
         slotValueQuantity: Int
     ) {
         val slotValuesToAdd = mutableListOf<SlotValues>()
-
-        for (i in 1..slotValueQuantity) {
-            slotValuesToAdd.add(slotValue)
-        }
     }
 }
